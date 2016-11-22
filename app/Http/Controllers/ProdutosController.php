@@ -19,6 +19,12 @@ class ProdutosController extends Controller{
     }
 
     public function store(Request $request){
+
+      $this->validate($request, [
+        'referencia' => 'required|unique:produtos|min:3',
+        'titulo' => 'required|min:3',
+      ]);
+
       $produto = new Produto();
       $produto->referencia = $request->input('referencia');
       $produto->titulo = $request->input('titulo');
