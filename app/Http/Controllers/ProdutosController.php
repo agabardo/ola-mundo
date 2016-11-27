@@ -18,13 +18,15 @@ class ProdutosController extends Controller{
       return view('produto.create');
     }
 
+    /*
+    * Salvando os dados de um novo produto por meio do método save() do
+    * model Produto.
+    */
     public function store(Request $request){
-
       $this->validate($request, [
         'referencia' => 'required|unique:produtos|min:3',
         'titulo' => 'required|min:3',
       ]);
-
       $produto = new Produto();
       $produto->referencia = $request->input('referencia');
       $produto->titulo = $request->input('titulo');
@@ -33,5 +35,13 @@ class ProdutosController extends Controller{
       if($produto->save()){
         return redirect('produtos');
       }
+    }
+
+    /*
+    * Carregando um produto para editar.
+    */
+    public function edit($id){
+      $produto = Produto::find($id);
+      return view('produto.edit', array('produto' => $produto));
     }
 }

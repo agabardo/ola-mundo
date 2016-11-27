@@ -96,8 +96,12 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'titulo' => [
+            'min' => 'Esse é um título muito curto.',
+        ],
+        'referencia' => [
+            'min' => 'Uma Referência deve ter no mínimo três caracteres.',
+            'required' => 'Um produto não pode ser cadastrado sem referência.'
         ],
     ],
 
@@ -112,6 +116,6 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => ['referencia'=>'Referência','titulo'=>'Título'],
 
 ];
