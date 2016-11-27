@@ -44,4 +44,8 @@ class ProdutosController extends Controller{
       $produto = Produto::find($id);
       return view('produto.edit', array('produto' => $produto));
     }
+
+    public function update($id){
+      print_r($_POST);
+    }
 }
