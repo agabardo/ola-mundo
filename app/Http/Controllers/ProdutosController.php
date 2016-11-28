@@ -3,17 +3,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Produto;
+use Session;
 class ProdutosController extends Controller{
+
+    /*
+    * Método que busca todos os dados de produtos do banco de dados e
+    * carrega a view passando os dados dos produtos como parâmetro.
+    */
     public function index(){
       $produtos = Produto::all();
       return view('produto.index', array('produtos' => $produtos));
     }
 
+    /*
+    * Método que busca os dados de um produto do banco de dados e
+    * carrega a view passando os dados de um produto como parâmetro.
+    */
     public function show($id){
       $produto = Produto::find($id);
       return view('produto.show', array('produto' => $produto));
     }
 
+    /*
+    * Método que carrega a view com um formulário para criar um produto.
+    */
     public function create(){
       return view('produto.create');
     }
@@ -45,7 +58,29 @@ class ProdutosController extends Controller{
       return view('produto.edit', array('produto' => $produto));
     }
 
-    public function update($id){
-      print_r($_POST);
+    /**
+    * Salvando os dados da alteração de um produto recebido de um formulário.
+    */
+    public function update($id, Request $request){
+      $produto = Produto::find($id);
+      $this->validate($request, [
+        'referencia' => 'required|min:3',
+        'titulo' => 'required|min:3',
+      ]);
+
+      //Se a requisição HTTP incluir o arquivo no campo 'fotoproduto'
+      if($request->hasFile('fotoproduto')){
+        $image = $request->file('fotoproduto');
+        $filename  = md5($id) . $image->getClientOriginalExtension();
+        $request->file('fotoproduto')->move(public_path('./img/produtos/'), $filename);
+      }
+
+      $produto->referencia = $request->input('referencia');
+      $produto->titulo = $request->input('titulo');
+      $produto->descricao = $request->input('descricao');
+      $produto->preco = $request->input('preco');
+      $produto->save();
+      Session::flash('mensagem', 'Produto alterado com sucesso.');
+      return redirect()->back();
     }
 }

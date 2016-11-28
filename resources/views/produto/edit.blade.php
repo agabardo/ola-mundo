@@ -6,12 +6,19 @@
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>{{$error}}</li>
             @endforeach
         </ul>
     </div>
   @endif
-  {{Form::open(['route' => ['produtos.update', $produto->id],  'method' => 'PUT'])}}
+
+  @if(Session::has('mensagem'))
+      <div class="alert alert-success">
+          {{Session::get('mensagem')}}
+      </div>
+  @endif
+
+  {{Form::open(['route'=>['produtos.update',$produto->id],'enctype'=>'multipart/form-data','method'=>'PUT'])}}
   {{Form::label('referencia','Referência',['class'=>'prettyLabels'])}}
   {{Form::text('referencia',$produto->referencia,['class'=>'form-control','required','placeholder'=>'Referência'])}}
   {{Form::label('titulo', 'Título')}}
@@ -20,6 +27,7 @@
   {{Form::textarea('descricao',$produto->descricao,['rows'=>3,'class'=>'form-control','required','placeholder'=>'Descrição'])}}
   {{Form::label('preco', 'Preço')}}
   {{Form::text('preco',$produto->preco,['class'=>'form-control','required','placeholder'=>'Preço'])}}
+  {{Form::file('fotoproduto')}}
   <br/>
   {{Form::submit('Alterar',['class'=>'btn btn-default'])}}
   {{Form::close()}}
