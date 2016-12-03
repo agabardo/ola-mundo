@@ -27,7 +27,8 @@
   {{Form::textarea('descricao',$produto->descricao,['rows'=>3,'class'=>'form-control','required','placeholder'=>'Descrição'])}}
   {{Form::label('preco', 'Preço')}}
   {{Form::text('preco',$produto->preco,['class'=>'form-control','required','placeholder'=>'Preço'])}}
-  {{Form::file('fotoproduto')}}
+  {{Form::label('fotoproduto', 'Foto')}}
+  {{Form::file('fotoproduto',['class'=>'form-control','id'=>'fotoproduto'])}}
   <br/>
   {{Form::submit('Alterar',['class'=>'btn btn-default'])}}
   {{Form::close()}}

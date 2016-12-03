@@ -66,13 +66,14 @@ class ProdutosController extends Controller{
       $this->validate($request, [
         'referencia' => 'required|min:3',
         'titulo' => 'required|min:3',
+        'fotoproduto' => 'mimetypes:image/jpeg',
       ]);
 
       //Se a requisição HTTP incluir o arquivo no campo 'fotoproduto'
       if($request->hasFile('fotoproduto')){
-        $image = $request->file('fotoproduto');
-        $filename  = md5($id) . $image->getClientOriginalExtension();
-        $request->file('fotoproduto')->move(public_path('./img/produtos/'), $filename);
+        $imagem = $request->file('fotoproduto');
+        $nomearquivo  = md5($id) .".". $imagem->getClientOriginalExtension();
+        $request->file('fotoproduto')->move(public_path('./img/produtos/'), $nomearquivo);
       }
 
       $produto->referencia = $request->input('referencia');
