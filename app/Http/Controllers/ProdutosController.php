@@ -12,7 +12,13 @@ class ProdutosController extends Controller{
     */
     public function index(){
       $produtos = Produto::all();
-      return view('produto.index', array('produtos' => $produtos));
+      //$produtos = Produto::paginate(8);
+      return view('produto.index', array('produtos' => $produtos,'busca'=>null));
+    }
+
+    public function buscar(Request $request){
+      $produtos = Produto::where('titulo', 'LIKE', '%'.$request->input('busca').'%')->orwhere('descricao', 'LIKE', '%'.$request->input('busca').'%')->get();
+      return view('produto.index', array('produtos' => $produtos,'busca'=>$request->input('busca')));
     }
 
     /*
@@ -69,7 +75,7 @@ class ProdutosController extends Controller{
         'fotoproduto' => 'mimetypes:image/jpeg',
       ]);
 
-      //Se a requisição HTTP incluir o arquivo no campo 'fotoproduto'
+      //Se a requisição HTTP incluir o arquivo no campo 'fotoproduto'.
       if($request->hasFile('fotoproduto')){
         $imagem = $request->file('fotoproduto');
         $nomearquivo  = md5($id) .".". $imagem->getClientOriginalExtension();
@@ -82,6 +88,16 @@ class ProdutosController extends Controller{
       $produto->preco = $request->input('preco');
       $produto->save();
       Session::flash('mensagem', 'Produto alterado com sucesso.');
+      return redirect()->back();
+    }
+
+    /**
+    * Método usado para excluir um produto.
+    */
+    public function destroy($id){
+      $produto = Produto::find($id);
+      $produto->delete();
+      Session::flash('mensagem', 'Produto excluído com sucesso.');
       return redirect()->back();
     }
 }
