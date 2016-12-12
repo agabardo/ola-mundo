@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use App\Produto;
 use Session;
@@ -33,7 +34,12 @@ class ProdutosController extends Controller{
     * Método que carrega a view com um formulário para criar um produto.
     */
     public function create(){
-      return view('produto.create');
+      if (Auth::check()) {
+        return view('produto.create');
+      }
+      else{
+        return redirect ('login');
+      }
     }
 
     /*

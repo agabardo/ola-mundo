@@ -26,3 +26,6 @@ Route::post('produtos/buscar', 'ProdutosController@buscar');
 Route::get('adicionar-produto', 'ProdutosController@create');
 Route::get('produtos/{id}/editar', 'ProdutosController@edit');
 Route::get('produtos/{id}/detalhes', 'ProdutosController@show');
+
+Route::auth();
+Route::get('/home', 'HomeController@index');

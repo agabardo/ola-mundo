@@ -31,10 +31,13 @@
               {{$produto->titulo}}
             </a>
           @endif
-        {{Form::open(['route'=>['produtos.destroy',$produto->id],'method'=>'DELETE'])}}
-        <a class='btn btn-default' href=" {{url('produtos/'.$produto->id.'/edit')}} ">Editar</a>
-        {{Form::submit('Excluir',['class'=>'btn btn-default'])}}
-        {{Form::close()}}
+
+          @if(Auth::check())
+            {{Form::open(['route'=>['produtos.destroy',$produto->id],'method'=>'DELETE'])}}
+            <a class='btn btn-default' href=" {{url('produtos/'.$produto->id.'/edit')}} ">Editar</a>
+            {{Form::submit('Excluir',['class'=>'btn btn-default'])}}
+            {{Form::close()}}
+          @endif
       </div>
     @endforeach
   </div>
