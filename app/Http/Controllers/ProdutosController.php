@@ -47,17 +47,19 @@ class ProdutosController extends Controller{
     * model Produto.
     */
     public function store(Request $request){
-      $this->validate($request, [
-        'referencia' => 'required|unique:produtos|min:3',
-        'titulo' => 'required|min:3',
-      ]);
-      $produto = new Produto();
-      $produto->referencia = $request->input('referencia');
-      $produto->titulo = $request->input('titulo');
-      $produto->descricao = $request->input('descricao');
-      $produto->preco = $request->input('preco');
-      if($produto->save()){
-        return redirect('produtos');
+      if(Auth::check()){
+        $this->validate($request, ['referencia' => 'required|unique:produtos|min:3','titulo' => 'required|min:3',]);
+        $produto = new Produto();
+        $produto->referencia = $request->input('referencia');
+        $produto->titulo = $request->input('titulo');
+        $produto->descricao = $request->input('descricao');
+        $produto->preco = $request->input('preco');
+        if($produto->save()){
+          return redirect('produtos');
+        }
+      }
+      else{
+        return redirect ('login');
       }
     }
 
@@ -65,44 +67,57 @@ class ProdutosController extends Controller{
     * Carregando um produto para editar.
     */
     public function edit($id){
-      $produto = Produto::find($id);
-      return view('produto.edit', array('produto' => $produto));
+      if(Auth::check()){
+        $produto = Produto::find($id);
+        return view('produto.edit', array('produto' => $produto));
+      }
+      else{
+        return redirect ('login');
+      }
     }
 
     /**
     * Salvando os dados da alteração de um produto recebido de um formulário.
     */
     public function update($id, Request $request){
-      $produto = Produto::find($id);
-      $this->validate($request, [
-        'referencia' => 'required|min:3',
-        'titulo' => 'required|min:3',
-        'fotoproduto' => 'mimetypes:image/jpeg',
-      ]);
-
-      //Se a requisição HTTP incluir o arquivo no campo 'fotoproduto'.
-      if($request->hasFile('fotoproduto')){
-        $imagem = $request->file('fotoproduto');
-        $nomearquivo  = md5($id) .".". $imagem->getClientOriginalExtension();
-        $request->file('fotoproduto')->move(public_path('./img/produtos/'), $nomearquivo);
+      if(Auth::check()){
+        $produto = Produto::find($id);
+        $this->validate($request, [
+          'referencia' => 'required|min:3',
+          'titulo' => 'required|min:3',
+          'fotoproduto' => 'mimetypes:image/jpeg',
+        ]);
+        //Se a requisição HTTP incluir o arquivo no campo 'fotoproduto'.
+        if($request->hasFile('fotoproduto')){
+          $imagem = $request->file('fotoproduto');
+          $nomearquivo  = md5($id) .".". $imagem->getClientOriginalExtension();
+          $request->file('fotoproduto')->move(public_path('./img/produtos/'), $nomearquivo);
+        }
+        $produto->referencia = $request->input('referencia');
+        $produto->titulo = $request->input('titulo');
+        $produto->descricao = $request->input('descricao');
+        $produto->preco = $request->input('preco');
+        $produto->save();
+        Session::flash('mensagem', 'Produto alterado com sucesso.');
+        return redirect()->back();
       }
-
-      $produto->referencia = $request->input('referencia');
-      $produto->titulo = $request->input('titulo');
-      $produto->descricao = $request->input('descricao');
-      $produto->preco = $request->input('preco');
-      $produto->save();
-      Session::flash('mensagem', 'Produto alterado com sucesso.');
-      return redirect()->back();
+      else{
+        return redirect ('login');
+      }
     }
 
     /**
     * Método usado para excluir um produto.
     */
     public function destroy($id){
-      $produto = Produto::find($id);
-      $produto->delete();
-      Session::flash('mensagem', 'Produto excluído com sucesso.');
-      return redirect()->back();
+      if(Auth::check()){
+        $produto = Produto::find($id);
+        $produto->delete();
+        Session::flash('mensagem', 'Produto excluído com sucesso.');
+        return redirect()->back();
+      }
+      else{
+        return redirect ('login');
+      }
     }
 }
