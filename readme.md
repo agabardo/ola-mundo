@@ -1,4 +1,4 @@
-# Sobre este repositóio
+# Sobre este repositório
 Em breve.
 
 # Laravel PHP Framework
