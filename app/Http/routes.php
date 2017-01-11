@@ -20,7 +20,9 @@ Route::get('/contato', function () {
     //return view('contato');
 });*/
 
-Route::resource('/contato', 'ContatoController');
+Route::get('contato', 'ContatoController@index');
+Route::post('contato/enviar', 'ContatoController@enviar');
+
 Route::resource('produtos', 'ProdutosController');
 Route::post('produtos/buscar', 'ProdutosController@buscar');
 Route::get('adicionar-produto', 'ProdutosController@create');

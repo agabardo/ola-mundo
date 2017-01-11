@@ -120,4 +120,5 @@ class ProdutosController extends Controller{
         return redirect ('login');
       }
     }
+
 }
