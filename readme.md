@@ -1,6 +1,7 @@
 # Sobre este repositório
-Em breve.
+<p>Em breve.</p>
 <img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/desktop.jpg" width="90%" alt=""/>
+<br/>
 <img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/mobile-inspection.jpg" width="90%" alt=""/>
 # Laravel PHP Framework
 
