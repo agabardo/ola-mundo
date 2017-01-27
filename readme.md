@@ -1,10 +1,12 @@
 # Sobre este repositório
 <p>Em breve.</p>
-<img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/desktop.jpg" width="90%" alt=""/>
+<img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/desktop.jpg" width="95%" alt=""/>
 <br/>
-<img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/mobile-inspection.jpg" width="90%" alt=""/>
+<img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/mobile-inspection.jpg" width="95%" alt=""/>
+# Instalação
+Atenção! Não faça simplesmente o download dos arquivos do repositório para uma pasta local, isso não irá funcionar.
+Para instalar corretamente o projeto deste repositório siga os passos do Capítulo 4 do livro: XXX, de Ademir Gabardo.
 # Laravel PHP Framework
-
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
