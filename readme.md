@@ -1,6 +1,6 @@
 # Sobre este repositório
 Em breve.
-
+<img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/desktop.jpg" width="50%" alt=""/>
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
