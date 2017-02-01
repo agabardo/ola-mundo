@@ -2,10 +2,37 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Produto;
+use App\Comentario;
 use Session;
 class ProdutosController extends Controller{
+
+    /***
+    / Esse método faz parte do capítulo sobre Eloquent ORM.
+    */
+    /*
+    public function extras(){
+      Produto::onlyTrashed()->restore();
+      try{
+        $produto = DB::select(DB::raw("SELECT
+          produtos.referencia,
+          produtos.titulo,
+          produtos.descricao,
+          produtos.preco,
+            (SELECT concat(usuario, ' - ', comentario, ' - ', classificassao)
+            FROM comentarios
+            WHERE produto_id = produtos.id
+            ORDER BY rand() LIMIT 1) as comentario
+          FROM produtos
+          WHERE produtos.id = 1"));
+        dd($produto);
+      }
+      catch(\Exception $e){
+        dd($e);
+      }
+    }*/
 
     /*
     * Método que busca todos os dados de produtos do banco de dados e
