@@ -1,10 +1,20 @@
 # Sobre este repositório
+<<<<<<< HEAD
 <p>Esse repositório contém exemplos mostrados no livro Laravel para ninjas, Novatec, 2017. Autor: Ademir Cristiano Gabardo (Chris). Antes de clonar ou fazer o download do repositório leia as instruções de instalação. Para mais detalhes sobre o livro visite o seguinte <a href='https://novatec.com.br/autores/gabardo.php'>link</a>.<br/>
 Por favor, se gostou do livro, marque o repositório com uma estrela, ou melhor ainda, deixe um comentário na <a href='https://novatec.com.br/autores/gabardo.php'>página do livro</a>.
 </p>
-<img src="https://raw.githubusercontent.com/agabardo/ola-mundo/master/public/img/imagens-github/Capa-laravel-para-ninjas.png" alt="Laravel para Ninjas - Ademir Gabardo, Novatec -2017"/>
+<img width='50%' src="https://raw.githubusercontent.com/agabardo/ola-mundo/master/public/img/imagens-github/Capa-laravel-para-ninjas.png" alt="Laravel para Ninjas - Ademir Gabardo, Novatec -2017"/>
 
-#Laravel
+#Screenshots do projeto
+=======
+<p>Em breve.</p>
+
+## Versão do framework usada nesses arquivos de exemplo: 5.2.45.
+A versão do framework usada para criar os arquivos desse repositório é a 5.2.45.
+Ao portar o mesmo projeto para a versão 5.3.X não enfrentei nenhum tipo de problema. Para usar a versão corrente do framework 5.4.2 use o <a href='https://github.com/agabardo/ola-mundo-5.4'>outro repositório</a> do projeto.
+Antes de fazer o fork do projeto leia as notas de instalação nesse documento.
+
+>>>>>>> 006c5e16f632acb24892ca2d12641db53aa154af
 <img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/desktop.jpg" width="95%" alt=""/>
 <br/>
 <img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/mobile-inspection.jpg" width="95%" alt=""/>
