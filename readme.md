@@ -1,5 +1,10 @@
 # Sobre este repositório
-<p>Em breve.</p>
+<p>Esse repositório contém exemplos mostrados no livro Laravel para ninjas, Novatec, 2017. Autor: Ademir Cristiano Gabardo (Chris). Antes de clonar ou fazer o download do repositório leia as instruções de instalação. Para mais detalhes sobre o livro visite o seguinte <a href='https://novatec.com.br/autores/gabardo.php'>link</a>.<br/>
+Por favor, se gostou do livro, marque o repositório com uma estrela, ou melhor ainda, deixe um comentário na <a href='https://novatec.com.br/autores/gabardo.php'>página do livro</a>.
+</p>
+<img src="https://raw.githubusercontent.com/agabardo/ola-mundo/master/public/img/imagens-github/Capa-laravel-para-ninjas.png" alt="Laravel para Ninjas - Ademir Gabardo, Novatec -2017"/>
+
+#Laravel
 <img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/desktop.jpg" width="95%" alt=""/>
 <br/>
 <img src="https://raw.githubusercontent.com/agabardo/olaMundo/master/public/img/imagens-github/mobile-inspection.jpg" width="95%" alt=""/>
@@ -17,7 +22,7 @@ Laravel é um framework para construção de aplicações web com sintaxe expres
 
 O Laravel é acessível e poderoso, fornecendo as ferramentas necessárias para aplicações grandes e robustas. Uma inversão sistema controle/recipiente, sistema de migração expressivo e suporte a testes unitários integrados fornece as ferramentas que você precisa para construir qualquer aplicativo web moderno.
 
-## Documentaçao oficial
+## Documentação oficial
 A documentação oficial do Laravel está disponível no [Website do Laravel](http://laravel.com/docs).
 
 
