@@ -2,8 +2,12 @@
 <p>Esse repositório contém exemplos mostrados no livro Laravel para ninjas, Novatec, 2017. Autor: Ademir Cristiano Gabardo (Chris). Antes de clonar ou fazer o download do repositório leia as instruções de instalação. Para mais detalhes sobre o livro visite o seguinte <a href='https://novatec.com.br/autores/gabardo.php'>link</a>.<br/>
 Por favor, se gostou do livro, marque o repositório com uma estrela, ou melhor ainda, deixe um comentário na <a href='https://novatec.com.br/autores/gabardo.php'>página do livro</a>.
 </p>
-<img width='60%' src="https://raw.githubusercontent.com/agabardo/ola-mundo/master/public/img/imagens-github/Capa-laravel-para-ninjas.png" alt="Laravel para Ninjas - Ademir Gabardo, Novatec -2017"/>
-
+<center>
+<img width='40%' src="https://raw.githubusercontent.com/agabardo/ola-mundo/master/public/img/imagens-github/Capa-laravel-para-ninjas.png" alt="Laravel para Ninjas - Ademir Gabardo, Novatec -2017"/></center>
+<br/>
+<center>
+<img src="https://raw.githubusercontent.com/agabardo/ola-mundo/master/public/img/imagens-github/comentarios-leitores.gif" alt="Comentarios dos leitores"/>
+</center>
 #Laravel
 
 ## Versão do framework usada nesses arquivos de exemplo: 5.2.45.
