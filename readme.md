@@ -1,3 +1,14 @@
+# Onde comprar?
+E-book:
+Amazon <a href='https://www.amazon.com.br/s/?search-alias=digital-text&field-keywords=9788575226063'>https://www.amazon.com.br/s/?search-alias=digital-text&field-keywords=9788575226063</a>
+Google Play <a href='https://play.google.com/store/search?q=9788575226063'>https://play.google.com/store/search?q=9788575226063</a>
+Kobo <a href='https://www.kobo.com/br/pt/ebook/laravel-para-ninjas'>https://www.kobo.com/br/pt/ebook/laravel-para-ninjas</a>
+Wook <a href='https://www.wook.pt/ebook/laravel-para-ninjas-ademir-c-gabardo/19868236'>https://www.wook.pt/ebook/laravel-para-ninjas-ademir-c-gabardo/19868236</a>
+iTunes <a href='https://itunes.apple.com/br/book/laravel-para-ninjas/id1279480006?mt=11'>https://itunes.apple.com/br/book/laravel-para-ninjas/id1279480006?mt=11</a>
+
+Livro físico:
+Novatec <a href='https://novatec.com.br/livros/laravel-para-ninjas/'>https://novatec.com.br/livros/laravel-para-ninjas/</a>
+
 # Sobre este repositório
 <p>Esse repositório contém exemplos mostrados no livro Laravel para ninjas, Novatec, 2017. Autor: Ademir Cristiano Gabardo (Chris). Antes de clonar ou fazer o download do repositório leia as instruções de instalação. Para mais detalhes sobre o livro visite o seguinte <a href='https://novatec.com.br/autores/gabardo.php'>link</a>.<br/>
 Por favor, se gostou do livro, marque o repositório com uma estrela, ou melhor ainda, deixe um comentário na <a href='https://novatec.com.br/autores/gabardo.php'>página do livro</a>.
